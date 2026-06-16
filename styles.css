@@ -817,6 +817,31 @@ input:focus, textarea:focus, select:focus { border-color: var(--green-main); box
   border-radius: 20px;
   letter-spacing: 0.5px;
 }
+.product-ikar-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--blue-main);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-sm);
+}
+.products-empty {
+  text-align: center;
+  max-width: 460px;
+  margin: 40px auto;
+  padding: 48px 32px;
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.products-empty-icon { font-size: 2.6rem; margin-bottom: 12px; }
+.products-empty h3 { font-size: 1.3rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; }
+.products-empty p { font-size: 0.92rem; color: var(--text-light); line-height: 1.6; margin-bottom: 24px; }
 .product-front-body {
   padding: 20px;
   flex: 1;

@@ -109,6 +109,26 @@
 
   let activeCat = 'all';
   let activeCountry = 'all';
+  const grid = document.querySelector('.products-grid');
+  const empty = document.querySelector('.products-empty');
+
+  function applyFilters() {
+    let visible = 0;
+    cards.forEach(card => {
+      const cat = card.dataset.category;
+      const countries = card.dataset.countries;
+      const catMatch = activeCat === 'all' || cat === activeCat;
+      const countryMatch = activeCountry === 'all' || countries.includes(activeCountry);
+      if (catMatch && countryMatch) {
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+    if (empty) empty.style.display = visible === 0 ? 'block' : 'none';
+    if (grid) grid.style.display = visible === 0 ? 'none' : '';
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -122,17 +142,7 @@
       if (group === 'category') activeCat = value;
       if (group === 'country') activeCountry = value;
 
-      cards.forEach(card => {
-        const cat = card.dataset.category;
-        const countries = card.dataset.countries;
-        const catMatch = activeCat === 'all' || cat === activeCat;
-        const countryMatch = activeCountry === 'all' || countries.includes(activeCountry);
-        if (catMatch && countryMatch) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
+      applyFilters();
     });
   });
 })();
@@ -148,7 +158,6 @@
     document.querySelector('.modal-hero-img').src = data.img;
     document.querySelector('.modal-description').textContent = data.description;
     document.querySelector('.modal-composition').textContent = data.composition;
-    document.querySelector('.modal-benefits').textContent = data.benefits;
     document.querySelector('.modal-crops-text').textContent = data.crops;
     document.querySelector('.modal-application').textContent = data.application;
     document.querySelector('.modal-category-val').textContent = data.category;
@@ -164,10 +173,9 @@
         img: card.dataset.img,
         description: card.dataset.description,
         composition: card.dataset.composition,
-        benefits: card.dataset.benefits,
         crops: card.dataset.crops,
         application: card.dataset.application,
-        category: card.dataset.category,
+        category: card.dataset.catlabel || card.dataset.category,
         formats: card.dataset.formats
       });
     });

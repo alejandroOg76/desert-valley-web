@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos | Desert Valley</title>
+  <meta name="description" content="Catálogo completo de especialidades agrícolas, bioestimulantes, fertilizantes y mejoradores de suelo Desert Valley para Centroamérica.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav solid">
+  <a href="index.html" class="nav-logo">
+    <img src="logo-desert-valley.png" alt="Desert Valley" style="height:60px;width:auto;object-fit:contain;">
+    <div class="nav-logo-text">Desert Valley<span>Soluciones Agrícolas</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="productos.html" class="active">Productos</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="paises.html">Países</a></li>
+    <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Inicio</a>
+  <a href="nosotros.html">Nosotros</a>
+  <a href="productos.html">Productos</a>
+  <a href="servicios.html">Servicios</a>
+  <a href="paises.html">Países</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> › <span>Productos</span></div>
+    <h1>Catálogo de <span>soluciones</span> agrícolas</h1>
+    <p>Más de 20 formulaciones diseñadas para los cultivos tropicales de Centroamérica, con respaldo científico y desarrollo propio.</p>
+  </div>
+</section>
+
+<!-- FILTROS + GRID -->
+<section class="section">
+  <div class="container">
+
+    <div class="filter-bar reveal">
+      <span class="filter-label">Categoría:</span>
+      <div class="filter-group">
+        <button class="filter-btn active" data-group="category" data-value="all">Todas</button>
+        <button class="filter-btn" data-group="category" data-value="especialidades">Especialidades</button>
+        <button class="filter-btn" data-group="category" data-value="bioestimulantes">Bioestimulantes</button>
+        <button class="filter-btn" data-group="category" data-value="mejoradores">Mejoradores</button>
+        <button class="filter-btn" data-group="category" data-value="fertilizantes">Fertilizantes</button>
+        <button class="filter-btn" data-group="category" data-value="correctores">Correctores</button>
+      </div>
+    </div>
+    <div class="filter-bar reveal reveal-delay-1" style="margin-bottom: 48px;">
+      <span class="filter-label">País:</span>
+      <div class="filter-group">
+        <button class="filter-btn active" data-group="country" data-value="all">Todos</button>
+        <button class="filter-btn" data-group="country" data-value="honduras">🇭🇳 Honduras</button>
+        <button class="filter-btn" data-group="country" data-value="guatemala">🇬🇹 Guatemala</button>
+        <button class="filter-btn" data-group="country" data-value="nicaragua">🇳🇮 Nicaragua</button>
+        <button class="filter-btn" data-group="country" data-value="costarica">🇨🇷 Costa Rica</button>
+      </div>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- HEXAGONINA -->
+      <div class="product-card reveal"
+        data-category="correctores"
+        data-countries="honduras,guatemala,nicaragua,costarica"
+        data-name="HEXAGONINA"
+        data-img="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80"
+        data-description="Corrector líquido especializado en Zinc para aplicación foliar, con alta capacidad de traslocación y absorción. Formulado con Zinc en forma de sulfato y quelado por EDTA para máxima eficacia."
+        data-composition="Zinc (Zn) 2% sulfato + 1% quelado EDTA | pH 6–7 | Densidad 1.20 g/cc"
+        data-benefits="Previene y corrige carencias de Zinc · Excelente traslocación foliar · Sin limitación en número de aplicaciones · Sin residuos"
+        data-crops="Cítricos · Frutales tropicales · Melón · Sandía · Maíz · Café · Banano"
+        data-application="Foliar: 0.10–0.15% (0.5–1 L/Ha). Máximo 0.1% en frutos de coloración delicada."
+        data-formats="1 L · 5 L · 20 L · 1000 L">
+        <div class="product-card-inner">
+          <div class="product-front">
+            <div class="product-front-img">
+              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=400&q=80" alt="Hexagonina" loading="lazy">
+              <span class="product-category-badge">Corrector Carencias</span>
+            </div>
+            <div class="product-front-body">
+              <div>
+                <h3>HEXAGONINA</h3>
+                <p>Corrector de Zinc foliar con alta traslocación y absorción. Zn 2% sulfato + 1% EDTA.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <h3>HEXAGONINA</h3>
+            <div class="product-back-detail">Corrige eficazmente las carencias de Zinc en todos los cultivos. Aplicable sin límite de tratamientos, seguro y sin residuos.</div>
+            <div class="product-crops">
+              <span class="crop-tag">Cítricos</span><span class="crop-tag">Café</span><span class="crop-tag">Banano</span><span class="crop-tag">Maíz</span>
+            </div>
+            <div class="product-back-cta">Ver ficha completa →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEXAGON EXPLORER -->
+      <div class="product-card reveal reveal-delay-1"
+        data-category="bioestimulantes"
+        data-countries="honduras,guatemala,nicaragua,costarica"
+        data-name="HEXAGON EXPLORER 16-0-0"
+        data-img="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80"
+        data-description="Fertilizante nitrogenado orgánico en polvo de origen animal, diseñado para estimular el desarrollo vegetativo. Ampliamente utilizado en producción orgánica y convencional por su rápida absorción y alto contenido en aminoácidos libres."
+        data-composition="N total 16% · Aminoácidos totales 98.35% · M.O. 91.5% · C orgánico 53.1% · C/N 3.29 · pH 6.5–6.9"
+        data-benefits="Absorción y traslocación rápida del nitrógeno · Aminoácidos para tolerancia al estrés · Reduce la dependencia de grandes aplicaciones · Aplicable en condiciones adversas"
+        data-crops="Café · Banano · Maíz · Tomate · Pimiento · Melón · Sandía · Papa · Caña de azúcar · Cítricos · Palma africana"
+        data-application="Fertirrigación: 3–5 kg/Ha por aplicación. Foliar: 2–3 kg por 1000 L. 3–4 aplicaciones en etapas críticas."
+        data-formats="1 kg · 5 kg · 25 kg">
+        <div class="product-card-inner">
+          <div class="product-front">
+            <div class="product-front-img">
+              <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=400&q=80" alt="Hexagon Explorer" loading="lazy">
+              <span class="product-category-badge">Bioestimulante</span>
+            </div>
+            <div class="product-front-body">
+              <div>
+                <h3>HEXAGON EXPLORER 16-0-0</h3>
+                <p>Nitrógeno orgánico en polvo con 98% de aminoácidos. Estimula el desarrollo vegetativo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <h3>HEXAGON EXPLORER 16-0-0</h3>
+            <div class="product-back-detail">Apto para producción orgánica y convencional. Ideal en post-trasplante, etapas de crecimiento y períodos de estrés.</div>
+            <div class="product-crops">
+              <span class="crop-tag">Café</span><span class="crop-tag">Maíz</span><span class="crop-tag">Palma</span><span class="crop-tag">Hortalizas</span>
+            </div>
+            <div class="product-back-cta">Ver ficha completa →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEXAGON ARTISAN -->
+      <div class="product-card reveal reveal-delay-2"
+        data-category="fertilizantes"
+        data-countries="honduras,guatemala,nicaragua,costarica"
+        data-name="HEXAGON ARTISAN"
+        data-img="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&q=80"
+        data-description="Línea de fertilizantes NPK cristalinos 100% solubles en agua con microelementos. Tres formulaciones para cada etapa del cultivo: desarrollo inicial, crecimiento y engorde/maduración del fruto."
+        data-composition="20-20-20 + TE (equilibrado) | 13-40-13 + TE (alto P, floración) | 10-12-40 + TE (alto K, maduración) | 100% soluble | Apto sin cloro"
+        data-benefits="Nutrición equilibrada en cada etapa · Alta pureza cristalina · Sin residuos · Aplicable todo el año"
+        data-crops="Aplicable en todo tipo de cultivos. Especialmente recomendado en hortalizas, frutales, melón, sandía, piña, café."
+        data-application="Fertirrigación: 0.5–1.5 g/L. Foliar: 1 kg/200 L. Máximo 15 kg/200 L en solución madre."
+        data-formats="1 kg · 5 kg · 25 kg">
+        <div class="product-card-inner">
+          <div class="product-front">
+            <div class="product-front-img">
+              <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=400&q=80" alt="Hexagon Artisan" loading="lazy">
+              <span class="product-category-badge">Fertilizante Soluble</span>
+            </div>
+            <div class="product-front-body">
+              <div>
+                <h3>HEXAGON ARTISAN</h3>
+                <p>NPK cristalino 100% soluble con microelementos. 3 formulaciones para cada etapa.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <h3>HEXAGON ARTISAN</h3>
+            <div class="product-back-detail">20-20-20, 13-40-13 y 10-12-40 con TE. Alta pureza, sin cloro, perfecto para fertirrigación y cultivo intensivo.</div>
+            <div class="product-crops">
+              <span class="crop-tag">Melón</span><span class="crop-tag">Sandía</span><span class="crop-tag">Tomate</span><span class="crop-tag">Piña</span>
+            </div>
+            <div class="product-back-cta">Ver ficha completa →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEXAGON DRY -->
+      <div class="product-card reveal"
+        data-category="especialidades"
+        data-countries="honduras,guatemala,nicaragua"
+        data-name="HEXAGON DRY"
+        data-img="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80"
+        data-description="Especialidad agrícola en polvo de alta concentración para nutrición foliar y radical. Combina macronutrientes y micronutrientes quelados con extractos naturales de algas marinas para potenciar la absorción y el desarrollo radicular."
+        data-composition="Macro y micronutrientes quelados 45% · Extractos de algas marinas (Ascophyllum nodosum) 15% · M.O. 30%"
+        data-benefits="Alta eficiencia nutricional · Mejora la absorción de nutrientes · Potencia el desarrollo radicular · Tolerancia al estrés hídrico"
+        data-crops="Café · Banano · Caña de azúcar · Melón · Maíz · Palma africana · Piña"
+        data-application="Foliar: 1–2 kg/Ha. Fertirrigación: 2–3 kg/Ha. Aplicar en etapas de mayor demanda nutricional."
+        data-formats="1 kg · 5 kg · 25 kg">
+        <div class="product-card-inner">
+          <div class="product-front">
+            <div class="product-front-img">
+              <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80" alt="Hexagon Dry" loading="lazy">
+              <span class="product-category-badge">Especialidad Agrícola</span>
+            </div>
+            <div class="product-front-body">
+              <div>
+                <h3>HEXAGON DRY</h3>
+                <p>Especialidad en polvo con nutrientes quelados y extractos de algas. Nutrición foliar y radical.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <h3>HEXAGON DRY</h3>
+            <div class="product-back-detail">Formulación en polvo de alta solubilidad. Combina la eficacia de los quelatos con la bioactividad de los extractos de algas árticas.</div>
+            <div class="product-crops">
+              <span class="crop-tag">Café</span><span class="crop-tag">Banano</span><span class="crop-tag">Caña</span><span class="crop-tag">Palma</span>
+            </div>
+            <div class="product-back-cta">Ver ficha completa →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEXAGON BOREAL -->
+      <div class="product-card reveal reveal-delay-1"
+        data-category="especialidades"
+        data-countries="honduras,guatemala,nicaragua,costarica"
+        data-name="HEXAGON BOREAL"
+        data-img="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600&q=80"
+        data-description="Bioactivador de última generación basado en extractos de algas árticas (Ascophyllum nodosum) y aminoácidos libres de origen vegetal. Estimula los mecanismos naturales de defensa y crecimiento de la planta."
+        data-composition="Extractos Ascophyllum nodosum 30% · Aminoácidos libres L-forma 20% · Citoquininas naturales 0.05% · Betaínas 2%"
+        data-benefits="Estimula el crecimiento vegetativo · Mejora la resistencia al estrés hídrico y térmico · Activa defensas naturales · Incrementa la cuaja y el calibre del fruto"
+        data-crops="Todos los cultivos. Especialmente eficaz en frutales tropicales, café, piña, banano y hortalizas de ciclo corto."
+        data-application="Foliar: 1–2 L/Ha cada 15 días en etapas críticas. Fertirrigación: 2–3 L/Ha. Inicio: 5–7 días post-trasplante."
+        data-formats="1 L · 5 L · 20 L">
+        <div class="product-card-inner">
+          <div class="product-front">
+            <div class="product-front-img">
+              <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=400&q=80" alt="Hexagon Boreal" loading="lazy">
+              <span class="product-category-badge">Especialidad Agrícola</span>
+            </div>
+            <div class="product-front-body">
+              <div>
+                <h3>HEXAGON BOREAL</h3>
+                <p>Bioactivador con algas árticas y aminoácidos L-forma. Estimula crecimiento y defensas naturales.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <h3>HEXAGON BOREAL</h3>
+            <div class="product-back-detail">Ideal para períodos de estrés, cambios bruscos de temperatura y optimización del cuaje. Apto para producción orgánica certificada.</div>
+            <div class="product-crops">
+              <span class="crop-tag">Café</span><span class="crop-tag">Piña</span><span class="crop-tag">Banano</span><span class="crop-tag">Hortalizas</span>
+            </div>
+            <div class="product-back-cta">Ver ficha completa →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEXAGON CITROFRUT -->
+      <div class="product-card reveal reveal-delay-2"
+        data-category="especialidades"
+        data-countries="costarica,honduras"
+        data-name="HEXAGON CITROFRUT"
+        data-img="https://images.unsplash.com/photo-1543381501-8c3e11f375e5?w=600&q=80"
+        data-description="Especialidad líquida formulada para maximizar la producción y calidad en cítricos y frutales tropicales. Potencia el engorde, la coloración y los grados Brix del fruto, reduciendo la caída prematura."
+        data-composition="K₂O 15% · CaO 8% · B 0.2% · Aminoácidos 10% · Extractos vegetales 5%"
+        data-benefits="Mejora calibre y coloración del fruto · Aumenta grados Brix · Reduce caída prematura · Fortalece pared celular"
+        data-crops="Naranja · Limón · Mandarina · Mango · Papaya · Maracuyá · Melón · Sandía · Piña"
+        data-application="Foliar: 2–3 L/Ha desde cuajado hasta inicio de maduración. Aplicar en horas frescas. 3–4 aplicaciones por ciclo."
+        data-formats="1 L · 5 L · 20 L">
+        <div class="product-card-inner">
+          <div class="product-front">
+            <div class="product-front-img">
+              <img src="https://images.unsplash.com/photo-1543381501-8c3e11f375e5?w=400&q=80" alt="Hexagon Citrofrut" loading="lazy">
+              <span class="product-category-badge">Especialidad Agrícola</span>
+            </div>
+            <div class="product-front-body">
+              <div>
+                <h3>HEXAGON CITROFRUT</h3>
+                <p>Especialidad para cítricos y frutales. Maximiza calibre, Brix y coloración del fruto.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <h3>HEXAGON CITROFRUT</h3>
+            <div class="product-back-detail">K, Ca y B en formulación líquida sinérgica con aminoácidos. Aplicar desde cuajado para obtener el máximo efecto sobre el calibre y la calidad.</div>
+            <div class="product-crops">
+              <span class="crop-tag">Naranja</span><span class="crop-tag">Mango</span><span class="crop-tag">Papaya</span><span class="crop-tag">Sandía</span>
+            </div>
+            <div class="product-back-cta">Ver ficha completa →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEXAGON PLUS -->
+      <div class="product-card reveal"
+        data-category="bioestimulantes"
+        data-countries="honduras,guatemala,nicaragua,costarica"
+        data-name="HEXAGON PLUS"
+        data-img="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?w=600&q=80"
+        data-description="Bioestimulante de nueva generación con microorganismos beneficiosos activos. Mejora la microbiota del suelo, potencia el crecimiento radicular y actúa como agente antagónico frente a patógenos del suelo."
+        data-composition="Bacillus subtilis 1×10⁸ UFC/mL · Trichoderma harzianum 5×10⁷ UFC/mL · Humus de lombriz 12% · Ácidos húmicos 5%"
+        data-benefits="Mejora la microbiota del suelo · Estimula el crecimiento radicular · Antagonista de patógenos · Aumenta disponibilidad de nutrientes"
+        data-crops="Hortalizas · Frutales · Café · Maíz · Caña de azúcar · Banano · Cultivos intensivos en general"
+        data-application="Suelo (drench): 2–4 L/Ha en trasplante y cada 30 días. Fertirrigación: 2–3 L/Ha. No mezclar con fungicidas químicos."
+        data-formats="1 L · 5 L · 20 L">
+        <div class="product-card-inner">
+          <div class="product-front">
+            <div class="product-front-img">
+              <img src="https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?w=400&q=80" alt="Hexagon Plus" loading="lazy">
+              <span class="product-category-badge">Bioestimulante</span>
+            </div>
+            <div class="product-front-body">
+              <div>
+                <h3>HEXAGON PLUS</h3>
+                <p>Microorganismos beneficiosos activos. Potencia la microbiota del suelo y las raíces.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <h3>HEXAGON PLUS</h3>
+            <div class="product-back-detail">Con Bacillus subtilis y Trichoderma harzianum activos. Ideal como complemento en programas de reducción de fungicidas y mejora de la salud del suelo.</div>
+            <div class="product-crops">
+              <span class="crop-tag">Tomate</span><span class="crop-tag">Café</span><span class="crop-tag">Banano</span><span class="crop-tag">Maíz</span>
+            </div>
+            <div class="product-back-cta">Ver ficha completa →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEXAGON THERMES H15 -->
+      <div class="product-card reveal reveal-delay-1"
+        data-category="mejoradores"
+        data-countries="honduras,guatemala,nicaragua,costarica"
+        data-name="HEXAGON THERMES H15"
+        data-img="https://images.unsplash.com/photo-1569880153113-76161c291d5f?w=600&q=80"
+        data-description="Mejorador orgánico del suelo de alta eficiencia basado en ácidos húmicos y fúlvicos concentrados. Restaura la estructura del suelo, aumenta la capacidad de intercambio catiónico y potencia la absorción de nutrientes."
+        data-composition="Ácidos húmicos 15% · Ácidos fúlvicos 5% · K₂O 12% · Carbono orgánico total 58%"
+        data-benefits="Mejora estructura y aireación del suelo · Aumenta CIC · Potencia la absorción de nutrientes · Estimula la actividad microbiana"
+        data-crops="Todos los cultivos. Especialmente recomendado en suelos degradados, compactados o con baja materia orgánica."
+        data-application="Fertirrigación: 3–5 L/Ha por aplicación. Aplicación al suelo: 10–15 L/Ha al año repartido en 3–4 aplicaciones."
+        data-formats="5 L · 20 L · 200 L">
+        <div class="product-card-inner">
+          <div class="product-front">
+            <div class="product-front-img">
+              <img src="https://images.unsplash.com/photo-1569880153113-76161c291d5f?w=400&q=80" alt="Hexagon Thermes H15" loading="lazy">
+              <span class="product-category-badge">Mejorador del Suelo</span>
+            </div>
+            <div class="product-front-body">
+              <div>
+                <h3>HEXAGON THERMES H15</h3>
+                <p>Ácidos húmicos 15% y fúlvicos 5%. Restaura y potencia la vida del suelo.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <h3>HEXAGON THERMES H15</h3>
+            <div class="product-back-detail">Mejora drásticamente los suelos tropicales degradados. Aumenta la retención de agua y la disponibilidad de nutrientes para la planta.</div>
+            <div class="product-crops">
+              <span class="crop-tag">Todos los cultivos</span><span class="crop-tag">Suelos degradados</span>
+            </div>
+            <div class="product-back-cta">Ver ficha completa →</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEXAGON APOLO K -->
+      <div class="product-card reveal reveal-delay-2"
+        data-category="fertilizantes"
+        data-countries="honduras,guatemala"
+        data-name="HEXAGON APOLO K"
+        data-img="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=600&q=80"
+        data-description="Fertilizante potásico líquido de alta concentración para el engorde y maduración de frutos. Aporta K₂O de máxima absorción foliar y por raíz, potenciando la calidad final del fruto."
+        data-composition="K₂O 30% · Extractos vegetales 5% · pH 5.5–6.5 · Densidad 1.38 g/cc"
+        data-benefits="Potencia el engorde del fruto · Mejora grados Brix y coloración · Fortalece la pared celular · Reduce fisiopatías del fruto"
+        data-crops="Melón · Sandía · Tomate · Pimiento · Banano · Papaya · Maracuyá · Vid"
+        data-application="Fertirrigación: 3–5 L/Ha por semana desde inicio del engorde. Foliar: 2–3 L/Ha."
+        data-formats="5 L · 20 L · 200 L">
+        <div class="product-card-inner">
+          <div class="product-front">
+            <div class="product-front-img">
+              <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&q=80" alt="Hexagon Apolo K" loading="lazy">
+              <span class="product-category-badge">Fertilizante Soluble</span>
+            </div>
+            <div class="product-front-body">
+              <div>
+                <h3>HEXAGON APOLO K</h3>
+                <p>Potasio líquido K₂O 30%. Engorde y maduración de frutos de máxima calidad.</p>
+              </div>
+            </div>
+          </div>
+          <div class="product-back">
+            <h3>HEXAGON APOLO K</h3>
+            <div class="product-back-detail">Alta concentración de K₂O en formato líquido de fácil absorción. Imprescindible en la fase de engorde para maximizar el rendimiento comercial del fruto.</div>
+            <div class="product-crops">
+              <span class="crop-tag">Melón</span><span class="crop-tag">Sandía</span><span class="crop-tag">Tomate</span><span class="crop-tag">Banano</span>
+            </div>
+            <div class="product-back-cta">Ver ficha completa →</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /products-grid -->
+
+    <div style="text-align:center; margin-top:60px;" class="reveal">
+      <p style="color:var(--text-light); margin-bottom:20px; font-size:0.9rem;">¿No encontrás el producto para tu cultivo? Nuestro equipo técnico puede asesorarte.</p>
+      <a href="contacto.html" class="btn btn-primary">Solicitar asesoría técnica</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL DE PRODUCTO -->
+<div class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <img class="modal-hero-img" src="" alt="">
+      <div class="modal-header-overlay">
+        <h2 class="modal-title"></h2>
+      </div>
+      <button class="modal-close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-section-title">Descripción</div>
+      <p class="modal-description"></p>
+
+      <div class="modal-section-title">Composición</div>
+      <p class="modal-composition"></p>
+
+      <div class="modal-section-title">Beneficios</div>
+      <p class="modal-benefits"></p>
+
+      <div class="modal-section-title">Cultivos recomendados</div>
+      <p class="modal-crops-text"></p>
+
+      <div class="modal-section-title">Modo de aplicación</div>
+      <p class="modal-application"></p>
+
+      <div class="modal-specs">
+        <div class="modal-spec">
+          <div class="label">Categoría</div>
+          <div class="value modal-category-val"></div>
+        </div>
+        <div class="modal-spec">
+          <div class="label">Formatos disponibles</div>
+          <div class="value modal-format-val"></div>
+        </div>
+      </div>
+
+      <p class="modal-disclaimer">* Datos orientativos. Las dosis pueden variar según las condiciones del cultivo, el suelo y el clima. Consulte siempre con su asesor técnico Desert Valley antes de aplicar.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="reveal">Hagamos de tu cultivo <br>un buen negocio</h2>
+  <p class="reveal reveal-delay-1">Contáctanos para recibir un programa de nutrición personalizado para tu finca.</p>
+  <div class="cta-buttons reveal reveal-delay-2">
+    <a href="contacto.html" class="btn btn-white">Contactar distribuidor</a>
+    <a href="servicios.html" class="btn btn-outline-white">Ver servicios</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-logo">
+        <img src="logo-desert-valley.png" alt="Desert Valley" style="height:52px;width:auto;object-fit:contain;">
+      </div>
+      <p class="footer-desc">Soluciones agrícolas de precisión para Centroamérica.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link">f</a><a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">Li</a><a href="#" class="social-link">▶</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Empresa</h4><ul>
+      <li><a href="nosotros.html">Quiénes somos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Productos</h4><ul>
+      <li><a href="productos.html">Especialidades</a></li>
+      <li><a href="productos.html">Bioestimulantes</a></li>
+      <li><a href="productos.html">Fertilizantes</a></li>
+      <li><a href="productos.html">Correctores</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Países</h4><ul>
+      <li><a href="paises.html">🇭🇳 Honduras</a></li>
+      <li><a href="paises.html">🇬🇹 Guatemala</a></li>
+      <li><a href="paises.html">🇳🇮 Nicaragua</a></li>
+      <li><a href="paises.html">🇨🇷 Costa Rica</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Desert Valley · Todos los derechos reservados</span>
+    <span>Diseñado con ♥ para la agricultura centroamericana</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

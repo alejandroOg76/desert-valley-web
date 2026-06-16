@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Desert Valley</title>
+  <meta name="description" content="Contáctanos en Honduras, Guatemala, Nicaragua y Costa Rica. Equipo técnico Desert Valley disponible para asesorarte.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .contact-page-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-side h2 { font-size: 2rem; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; line-height: 1.2; }
+    .contact-side h2 span { color: var(--green-main); }
+    .contact-side > p { color: var(--text-light); line-height: 1.7; margin-bottom: 40px; font-size: 0.95rem; }
+    .contact-group-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--green-main); margin-bottom: 16px;
+    }
+    .contact-country-cards { display: flex; flex-direction: column; gap: 12px; }
+    .contact-country-card {
+      display: flex; align-items: center; gap: 16px;
+      background: var(--bg-light); border-radius: var(--radius-md);
+      padding: 16px 20px; border: 1px solid transparent;
+      transition: all var(--transition); cursor: default;
+    }
+    .contact-country-card:hover {
+      background: white; border-color: var(--green-main);
+      box-shadow: var(--shadow-sm); transform: translateX(4px);
+    }
+    .contact-country-card .flag { font-size: 1.8rem; flex-shrink: 0; }
+    .contact-country-card-info {}
+    .contact-country-card-name { font-weight: 700; font-size: 0.95rem; color: var(--text-dark); }
+    .contact-country-card-email {
+      font-size: 0.8rem; color: var(--green-main); font-weight: 500;
+      text-decoration: underline; text-underline-offset: 2px;
+    }
+    .contact-country-card-tel { font-size: 0.8rem; color: var(--text-light); }
+    .form-section-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 1.5px; color: var(--text-light); margin: 24px 0 12px;
+    }
+    .form-section-title:first-child { margin-top: 0; }
+    label { font-size: 0.82rem; font-weight: 600; display: block; margin-bottom: 6px; color: var(--text-mid); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .headquarters {
+      margin-top: 40px;
+      background: var(--bg-dark);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .headquarters::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      background: rgba(46,125,50,0.15);
+    }
+    .headquarters h4 { color: white; font-size: 1rem; font-weight: 700; margin-bottom: 8px; position: relative; }
+    .headquarters p { color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6; position: relative; }
+    .headquarters a { color: var(--green-light); }
+    .map-placeholder {
+      width: 100%;
+      height: 280px;
+      background: var(--bg-light);
+      border-radius: var(--radius-lg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 1px solid var(--border);
+      margin-top: 40px;
+      color: var(--text-light);
+      font-size: 0.88rem;
+    }
+    .map-placeholder .map-icon { font-size: 2.5rem; }
+    .faq-section { margin-top: 80px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .faq-item {
+      background: white; border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 28px; transition: all var(--transition);
+    }
+    .faq-item:hover { box-shadow: var(--shadow-sm); border-color: var(--green-main); transform: translateY(-2px); }
+    .faq-item h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+    .faq-item p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+    @media (max-width: 1024px) { .contact-page-layout { grid-template-columns: 1fr; } .faq-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav solid">
+  <a href="index.html" class="nav-logo">
+    <img src="logo-desert-valley.png" alt="Desert Valley" style="height:60px;width:auto;object-fit:contain;">
+    <div class="nav-logo-text">Desert Valley<span>Soluciones Agrícolas</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="productos.html">Productos</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="paises.html">Países</a></li>
+    <li><a href="contacto.html" class="nav-cta active">Contacto</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Inicio</a><a href="nosotros.html">Nosotros</a>
+  <a href="productos.html">Productos</a><a href="servicios.html">Servicios</a>
+  <a href="paises.html">Países</a><a href="contacto.html">Contacto</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> › <span>Contacto</span></div>
+    <h1>Hablemos de <span>tu cultivo</span></h1>
+    <p>Nuestro equipo técnico está disponible en los cuatro países para atenderte. Escríbenos y te respondemos en menos de 24 horas.</p>
+  </div>
+</section>
+
+<!-- CONTACT MAIN -->
+<section class="section">
+  <div class="container">
+    <div class="contact-page-layout">
+
+      <!-- LADO IZQUIERDO -->
+      <div class="reveal">
+        <h2>¿En qué <span>país</span> estás?</h2>
+        <p>Selecciona tu país para contactar directamente con el equipo local, o envíanos el formulario y lo derivamos automáticamente.</p>
+
+        <div class="contact-group-title">Contacto por país</div>
+        <div class="contact-country-cards">
+          <div class="contact-country-card">
+            <span class="flag">🇭🇳</span>
+            <div class="contact-country-card-info">
+              <div class="contact-country-card-name">Honduras</div>
+              <div class="contact-country-card-email">info@hn.grupodesertvalley.com</div>
+            </div>
+          </div>
+          <div class="contact-country-card">
+            <span class="flag">🇬🇹</span>
+            <div class="contact-country-card-info">
+              <div class="contact-country-card-name">Guatemala</div>
+              <div class="contact-country-card-email">elias.posada@grupodesertvalley.com</div>
+            </div>
+          </div>
+          <div class="contact-country-card">
+            <span class="flag">🇳🇮</span>
+            <div class="contact-country-card-info">
+              <div class="contact-country-card-name">Nicaragua</div>
+              <div class="contact-country-card-email">info.nc@grupodesertvalley.com</div>
+            </div>
+          </div>
+          <div class="contact-country-card">
+            <span class="flag">🇨🇷</span>
+            <div class="contact-country-card-info">
+              <div class="contact-country-card-name">Costa Rica</div>
+              <div class="contact-country-card-email">costarica@grupodesertvalley.com</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-placeholder">
+          <div class="map-icon">🗺️</div>
+          <strong>Centroamérica</strong>
+          <span>Honduras · Guatemala · Nicaragua · Costa Rica</span>
+        </div>
+      </div>
+
+      <!-- LADO DERECHO — FORMULARIO -->
+      <div class="contact-form-card reveal reveal-delay-2">
+        <h3>Envíanos tu consulta</h3>
+        <p>Te respondemos en menos de 24 horas hábiles.</p>
+        <form class="contact-form">
+          <div class="form-section-title">Datos personales</div>
+          <div class="form-row">
+            <div>
+              <label>Nombre completo *</label>
+              <input type="text" placeholder="Tu nombre" required>
+            </div>
+            <div>
+              <label>Empresa / Finca</label>
+              <input type="text" placeholder="Nombre de tu empresa">
+            </div>
+          </div>
+          <div class="form-row" style="margin-top:16px;">
+            <div>
+              <label>Correo electrónico *</label>
+              <input type="email" placeholder="tu@correo.com" required>
+            </div>
+            <div>
+              <label>Teléfono / WhatsApp *</label>
+              <input type="tel" placeholder="+504..." required>
+            </div>
+          </div>
+
+          <div class="form-section-title">Sobre tu consulta</div>
+          <div class="form-row">
+            <div>
+              <label>País *</label>
+              <select required>
+                <option value="">Seleccionar país...</option>
+                <option>Honduras</option>
+                <option>Guatemala</option>
+                <option>Nicaragua</option>
+                
+                <option>Costa Rica</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div>
+              <label>Tipo de consulta *</label>
+              <select required>
+                <option value="">Seleccionar...</option>
+                <option>Información de productos</option>
+                <option>Solicitar visita técnica</option>
+                <option>Convertirse en distribuidor</option>
+                <option>Fondo de inversión</option>
+                <option>Otra consulta</option>
+              </select>
+            </div>
+          </div>
+          <div style="margin-top:16px;">
+            <label>Cultivo(s) que manejas</label>
+            <input type="text" placeholder="Ej: Café, Melón, Palma africana, Maíz...">
+          </div>
+          <div style="margin-top:16px;">
+            <label>Mensaje *</label>
+            <textarea rows="5" placeholder="Cuéntanos sobre tu consulta, finca o proyecto..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit" style="width:100%;justify-content:center;margin-top:24px;font-size:1rem;padding:16px;">
+            Enviar mensaje →
+          </button>
+          <p style="font-size:0.75rem;color:var(--text-light);text-align:center;margin-top:12px;">
+            Al enviar aceptas que Desert Valley se comunique contigo. No compartimos tu información con terceros.
+          </p>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <div class="section-header reveal">
+        <div class="section-tag">Preguntas frecuentes</div>
+        <h2>Respuestas <span>rápidas</span></h2>
+        <div class="divider"></div>
+      </div>
+      <div class="faq-grid">
+        <div class="faq-item reveal reveal-delay-1">
+          <h4>¿Dónde puedo comprar los productos Desert Valley?</h4>
+          <p>A través de nuestra red de distribuidores autorizados en cada país. Contáctanos y te indicamos el distribuidor más cercano a tu zona.</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <h4>¿Ofrecen muestras o ensayos en campo?</h4>
+          <p>Sí. Para proyectos de cierta envergadura podemos facilitar muestras de producto y realizar ensayos comparativos en campo con el acompañamiento de nuestro técnico.</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-3">
+          <h4>¿Pueden diseñar un programa de nutrición para mi cultivo?</h4>
+          <p>Por supuesto. Nuestros agrónomos elaboran programas de nutrición personalizados sin costo adicional para clientes activos. Solo necesitamos los datos de tu cultivo y un análisis de suelo si lo tienes.</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-4">
+          <h4>¿Cómo puedo ser distribuidor de Desert Valley?</h4>
+          <p>Escríbenos a través del formulario indicando "Convertirse en distribuidor" como tipo de consulta. Evaluamos perfiles de distribución en todas las regiones de los 4 países.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="reveal">¿Prefieres que te llamemos?</h2>
+  <p class="reveal reveal-delay-1">Déjanos tu número y un técnico Desert Valley se pondrá en contacto contigo en menos de 24 horas.</p>
+  <div class="cta-buttons reveal reveal-delay-2">
+    <a href="servicios.html" class="btn btn-white">Ver servicios técnicos</a>
+    <a href="productos.html" class="btn btn-outline-white">Explorar productos</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-logo">
+        <img src="logo-desert-valley.png" alt="Desert Valley" style="height:52px;width:auto;object-fit:contain;">
+      </div>
+      <p class="footer-desc">Soluciones agrícolas de precisión para Centroamérica.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link">f</a><a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">Li</a><a href="#" class="social-link">▶</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Empresa</h4><ul>
+      <li><a href="nosotros.html">Quiénes somos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Productos</h4><ul>
+      <li><a href="productos.html">Catálogo</a></li>
+      <li><a href="productos.html">Bioestimulantes</a></li>
+      <li><a href="productos.html">Fertilizantes</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Países</h4><ul>
+      <li><a href="paises.html">🇭🇳 Honduras</a></li>
+      <li><a href="paises.html">🇬🇹 Guatemala</a></li>
+      <li><a href="paises.html">🇳🇮 Nicaragua</a></li>
+      <li><a href="paises.html">🇨🇷 Costa Rica</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Desert Valley · Todos los derechos reservados</span>
+    <span>Diseñado con ♥ para la agricultura centroamericana</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

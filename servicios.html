@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios | Desert Valley</title>
+  <meta name="description" content="Servicios de Desert Valley: asesoramiento técnico, I+D, distribución y fondo de inversión para el sector agrícola centroamericano.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .service-extra { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .service-extra p { margin-top: 16px; }
+    .service-expand-btn {
+      background: none; border: none; font-family: inherit;
+      color: var(--green-main); font-weight: 600; font-size: 0.88rem;
+      cursor: pointer; padding: 0; transition: color var(--transition);
+    }
+    .service-expand-btn:hover { color: var(--green-dark); }
+    .advisory-section {
+      background: var(--bg-light);
+      border-radius: var(--radius-lg);
+      padding: 60px;
+      margin-top: 80px;
+    }
+    .advisory-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .advisory-form .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .advisory-form .form-full { grid-column: 1 / -1; }
+    .advisory-info h3 { font-size: 1.6rem; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; }
+    .advisory-info p { color: var(--text-light); line-height: 1.7; margin-bottom: 24px; }
+    .advisory-features { display: flex; flex-direction: column; gap: 16px; }
+    .advisory-feature {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: white; border-radius: var(--radius-md);
+      padding: 16px 20px; border: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    .advisory-feature:hover { box-shadow: var(--shadow-sm); }
+    .advisory-feature-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(46,125,50,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .advisory-feature h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 4px; }
+    .advisory-feature p { font-size: 0.82rem; color: var(--text-light); margin: 0; }
+    .investment-section {
+      background: linear-gradient(135deg, var(--bg-dark), #0D2818);
+      border-radius: var(--radius-lg);
+      padding: 60px;
+      margin-top: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .investment-section::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 250px; height: 250px;
+      border-radius: 50%;
+      background: rgba(46,125,50,0.15);
+    }
+    .investment-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .investment-inner h2 { font-size: 2rem; font-weight: 800; color: white; margin-bottom: 16px; }
+    .investment-inner h2 span { color: var(--green-light); }
+    .investment-inner p { color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 24px; }
+    .investment-points { display: flex; flex-direction: column; gap: 16px; }
+    .investment-point {
+      display: flex; gap: 12px; align-items: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+    }
+    .investment-point .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--green-light); flex-shrink: 0;
+    }
+    .investment-point span { color: rgba(255,255,255,0.8); font-size: 0.88rem; }
+    @media (max-width: 768px) {
+      .advisory-layout { grid-template-columns: 1fr; }
+      .advisory-form .form-grid { grid-template-columns: 1fr; }
+      .investment-inner { grid-template-columns: 1fr; }
+      .advisory-section, .investment-section { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav solid">
+  <a href="index.html" class="nav-logo">
+    <img src="logo-desert-valley.png" alt="Desert Valley" style="height:60px;width:auto;object-fit:contain;">
+    <div class="nav-logo-text">Desert Valley<span>Soluciones Agrícolas</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="productos.html">Productos</a></li>
+    <li><a href="servicios.html" class="active">Servicios</a></li>
+    <li><a href="paises.html">Países</a></li>
+    <li><a href="contacto.html" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<nav class="mobile-menu">
+  <a href="index.html">Inicio</a><a href="nosotros.html">Nosotros</a>
+  <a href="productos.html">Productos</a><a href="servicios.html">Servicios</a>
+  <a href="paises.html">Países</a><a href="contacto.html">Contacto</a>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> › <span>Servicios</span></div>
+    <h1>Más allá del <span>producto</span></h1>
+    <p>Ofrecemos un ecosistema completo de servicios para que el agricultor y el distribuidor centroamericano puedan crecer con confianza.</p>
+  </div>
+</section>
+
+<!-- SERVICIOS PRINCIPALES -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Lo que ofrecemos</div>
+      <h2>Servicios que <span>generan valor</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+        </div>
+        <h3>Fabricación y Comercialización</h3>
+        <p>Producimos y distribuimos especialidades agrícolas de alta calidad para el mercado centroamericano, con logística adaptada a cada país y cadenas de distribución consolidadas.</p>
+        <div class="service-extra">
+          <p>Nuestro portafolio incluye más de 20 productos en diferentes formatos (líquido, polvo, granulado) adaptados a los cultivos tropicales de la región. Trabajamos con distribuidores locales certificados que garantizan la disponibilidad del producto en campo.</p>
+        </div>
+        <button class="service-expand-btn">Ver más +</button>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+        </div>
+        <h3>Investigación y Desarrollo</h3>
+        <p>Con un enfoque propio en investigación y desarrollo, creamos formulaciones adaptadas a los suelos, cultivos y condiciones climáticas específicas de Centroamérica.</p>
+        <div class="service-extra">
+          <p>Realizamos ensayos en campo en colaboración con agricultores, cooperativas y centros de investigación agronómica locales. Nuestro objetivo: soluciones que funcionen en la realidad del agricultor centroamericano, no solo en el laboratorio.</p>
+        </div>
+        <button class="service-expand-btn">Ver más +</button>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        </div>
+        <h3>Asesoramiento Técnico Especializado</h3>
+        <p>Nuestro equipo de técnicos agrónomos visita las fincas, analiza los suelos y los cultivos, y diseña programas de nutrición personalizados para maximizar el rendimiento y la rentabilidad.</p>
+        <div class="service-extra">
+          <p>Ofrecemos seguimiento continuo durante todo el ciclo del cultivo, interpretación de análisis foliares y de suelo, y ajuste de los programas de fertilización según los resultados observados. Sin costo adicional para clientes activos.</p>
+        </div>
+        <button class="service-expand-btn">Ver más +</button>
+      </div>
+
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-icon" style="background: linear-gradient(135deg, rgba(21,101,192,0.1), rgba(135,206,235,0.15));">
+          <svg viewBox="0 0 24 24" style="color: var(--blue-main);"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+        </div>
+        <h3>Fondo de Inversión Privada</h3>
+        <p>Desert Valley pone a disposición de emprendedores del sector agrícola centroamericano un fondo de inversión privada para apoyar la creación y crecimiento de negocios agro en la región.</p>
+        <div class="service-extra">
+          <p>Si tienes un proyecto agrícola con potencial y necesitas financiamiento, estructura empresarial o acompañamiento estratégico, contáctanos. Evaluamos proyectos en todos los países donde operamos y priorizamos iniciativas con impacto en la comunidad rural.</p>
+        </div>
+        <button class="service-expand-btn">Ver más +</button>
+      </div>
+
+    </div>
+
+    <!-- ASESORÍA TÉCNICA FORM -->
+    <div class="advisory-section reveal">
+      <div class="advisory-layout">
+        <div class="advisory-info">
+          <div class="section-tag">Visita técnica</div>
+          <h3>Solicita una visita agronómica <span style="color:var(--green-main);">gratuita</span></h3>
+          <p>Nuestros técnicos se desplazan a tu finca para analizar el cultivo, el suelo y diseñar el programa de nutrición óptimo para tu situación. Sin compromiso.</p>
+          <div class="advisory-features">
+            <div class="advisory-feature">
+              <div class="advisory-feature-icon">🔬</div>
+              <div>
+                <h4>Análisis foliar y de suelo</h4>
+                <p>Identificamos deficiencias y oportunidades de mejora con análisis rigurosos en campo.</p>
+              </div>
+            </div>
+            <div class="advisory-feature">
+              <div class="advisory-feature-icon">📋</div>
+              <div>
+                <h4>Programa de nutrición personalizado</h4>
+                <p>Diseñamos un plan ajustado a tu cultivo, etapa fenológica y objetivos de producción.</p>
+              </div>
+            </div>
+            <div class="advisory-feature">
+              <div class="advisory-feature-icon">📞</div>
+              <div>
+                <h4>Seguimiento continuo</h4>
+                <p>Te acompañamos durante todo el ciclo con soporte técnico telefónico y visitas periódicas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="advisory-form">
+          <form class="contact-form" style="background:white; border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-sm); border: 1px solid var(--border);">
+            <h3 style="font-size:1.25rem; font-weight:700; margin-bottom:24px;">Solicitar visita técnica</h3>
+            <div class="form-grid">
+              <div><label style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:6px;">Nombre completo *</label>
+                <input type="text" placeholder="Tu nombre" required></div>
+              <div><label style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:6px;">País *</label>
+                <select required>
+                  <option value="">Seleccionar...</option>
+                  <option>Honduras</option><option>Guatemala</option>
+                  <option>Nicaragua</option><option>Costa Rica</option>
+                </select>
+              </div>
+              <div><label style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:6px;">Cultivo principal *</label>
+                <input type="text" placeholder="Ej: Café, Melón, Banano" required></div>
+              <div><label style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:6px;">Teléfono / WhatsApp *</label>
+                <input type="tel" placeholder="+504..." required></div>
+              <div class="form-full"><label style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:6px;">Correo electrónico</label>
+                <input type="email" placeholder="tu@correo.com"></div>
+              <div class="form-full"><label style="font-size:0.82rm;font-weight:600;display:block;margin-bottom:6px;">¿En qué podemos ayudarte?</label>
+                <textarea placeholder="Cuéntanos sobre tu finca, cultivo o problema..." rows="4"></textarea></div>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit" style="width:100%;justify-content:center;margin-top:16px;">
+              Enviar solicitud
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- FONDO DE INVERSIÓN -->
+    <div class="investment-section reveal">
+      <div class="investment-inner">
+        <div>
+          <div class="section-tag">Crecimiento</div>
+          <h2>Fondo de <span>Inversión</span> Desert Valley</h2>
+          <p>Creemos en el potencial del agro centroamericano. Por eso, más allá de vender productos, invertimos en las personas y proyectos que lo hacen crecer.</p>
+          <a href="contacto.html" class="btn btn-primary">Presentar mi proyecto</a>
+        </div>
+        <div class="investment-points">
+          <div class="investment-point">
+            <div class="dot"></div>
+            <span>Financiamiento para creación y crecimiento de empresas agrícolas</span>
+          </div>
+          <div class="investment-point">
+            <div class="dot"></div>
+            <span>Acompañamiento estratégico y técnico del equipo Desert Valley</span>
+          </div>
+          <div class="investment-point">
+            <div class="dot"></div>
+            <span>Acceso a la red de distribución de Desert Valley en Centroamérica</span>
+          </div>
+          <div class="investment-point">
+            <div class="dot"></div>
+            <span>Proyectos evaluados en Honduras, Guatemala, Nicaragua y Costa Rica</span>
+          </div>
+          <div class="investment-point">
+            <div class="dot"></div>
+            <span>Prioridad a iniciativas con impacto social y ambiental positivo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="reveal">¿Listo para empezar?</h2>
+  <p class="reveal reveal-delay-1">Contacta con el equipo Desert Valley en tu país hoy mismo.</p>
+  <div class="cta-buttons reveal reveal-delay-2">
+    <a href="contacto.html" class="btn btn-white">Contactar ahora</a>
+    <a href="productos.html" class="btn btn-outline-white">Ver productos</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-logo">
+        <img src="logo-desert-valley.png" alt="Desert Valley" style="height:52px;width:auto;object-fit:contain;">
+      </div>
+      <p class="footer-desc">Soluciones agrícolas de precisión para Centroamérica.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link">f</a><a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">Li</a><a href="#" class="social-link">▶</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Empresa</h4><ul>
+      <li><a href="nosotros.html">Quiénes somos</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Productos</h4><ul>
+      <li><a href="productos.html">Catálogo completo</a></li>
+      <li><a href="productos.html">Bioestimulantes</a></li>
+      <li><a href="productos.html">Fertilizantes</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Países</h4><ul>
+      <li><a href="paises.html">🇭🇳 Honduras</a></li>
+      <li><a href="paises.html">🇬🇹 Guatemala</a></li>
+      <li><a href="paises.html">🇳🇮 Nicaragua</a></li>
+      <li><a href="paises.html">🇨🇷 Costa Rica</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Desert Valley · Todos los derechos reservados</span>
+    <span>Diseñado con ♥ para la agricultura centroamericana</span>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

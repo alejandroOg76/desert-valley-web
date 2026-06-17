@@ -108,7 +108,7 @@
   if (!filterBtns.length) return;
 
   let activeCat = 'all';
-  let activeCountry = 'all';
+  let activeCountry = 'honduras';
   const grid = document.querySelector('.products-grid');
   const empty = document.querySelector('.products-empty');
 
@@ -153,11 +153,27 @@
   const modalClose = document.querySelector('.modal-close');
   if (!overlay) return;
 
+  // Convierte la cadena de composición ("Componente valor · Componente valor · ...")
+  // en una tabla de 2 columnas (Componente | Contenido).
+  function buildCompositionTable(text) {
+    if (!text) return '';
+    const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const rows = text.split('·').map(s => s.trim()).filter(Boolean).map(item => {
+      // El valor empieza en el primer número "suelto" (precedido de espacio):
+      // 10%, 0,02% m/m, 6-8, 1,20 g/ml a 20°C, etc.
+      const m = item.match(/^(.+?)\s+(\d[\d.,]*(?:\s*[-–]\s*\d[\d.,]*)?.*)$/);
+      // Si no hay par "componente + valor" (es una frase), ocupa la fila completa.
+      if (!m || !m[1].trim()) return `<tr><td class="comp-note" colspan="2">${esc(item)}</td></tr>`;
+      return `<tr><td>${esc(m[1].trim())}</td><td>${esc(m[2].trim())}</td></tr>`;
+    }).join('');
+    return `<table class="comp-table"><thead><tr><th>Componente</th><th>Contenido</th></tr></thead><tbody>${rows}</tbody></table>`;
+  }
+
   function openModal(data) {
     document.querySelector('.modal-title').textContent = data.name;
     document.querySelector('.modal-hero-img').src = data.img;
     document.querySelector('.modal-description').textContent = data.description;
-    document.querySelector('.modal-composition').textContent = data.composition;
+    document.querySelector('.modal-composition').innerHTML = buildCompositionTable(data.composition);
     document.querySelector('.modal-crops-text').textContent = data.crops;
     document.querySelector('.modal-application').textContent = data.application;
     document.querySelector('.modal-category-val').textContent = data.category;

@@ -309,6 +309,16 @@ input:focus, textarea:focus, select:focus { border-color: var(--green-main); box
   transform: translateY(-2px);
 }
 .country-chip .flag { font-size: 1.1rem; }
+/* Banderas como imagen (los emojis de bandera no se renderizan en Windows) */
+.flag-img {
+  height: 1em;
+  width: auto;
+  vertical-align: -0.14em;
+  border-radius: 2px;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.12);
+  display: inline-block;
+}
+.country-flag .flag-img { height: 2.4rem; border-radius: 4px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18); }
 .hero-scroll {
   position: absolute;
   bottom: 32px;
@@ -802,9 +812,11 @@ input:focus, textarea:focus, select:focus { border-color: var(--green-main); box
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s ease;
+  /* Sin animación de transform propia: promovía la imagen a una capa GPU
+     que ignoraba el backface-visibility y dejaba un "fantasma" al voltear. */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
-.product-card:hover .product-front-img img { transform: scale(1.1); }
 .product-category-badge {
   position: absolute;
   top: 12px;
@@ -984,6 +996,35 @@ input:focus, textarea:focus, select:focus { border-color: var(--green-main); box
 }
 .modal-section-title:first-child { margin-top: 0; }
 .modal-body p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; }
+/* Tabla de composición del producto */
+.comp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: 4px;
+  border: 1px solid var(--border, #e2e8e4);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.comp-table thead th {
+  text-align: left;
+  background: var(--green-main, #2f7a44);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  padding: 10px 14px;
+}
+.comp-table thead th:last-child { text-align: right; }
+.comp-table tbody td {
+  padding: 9px 14px;
+  color: var(--text-mid);
+  border-top: 1px solid var(--border, #e9efea);
+}
+.comp-table tbody td:first-child { font-weight: 500; color: var(--text-dark); }
+.comp-table tbody td:last-child { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.comp-table tbody tr:nth-child(even) td { background: rgba(47, 122, 68, 0.04); }
+.comp-table tbody td.comp-note { text-align: left; white-space: normal; font-style: italic; color: var(--text-mid); }
 .modal-specs {
   display: grid;
   grid-template-columns: 1fr 1fr;

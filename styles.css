@@ -462,7 +462,7 @@ input:focus, textarea:focus, select:focus { border-color: var(--green-main); box
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
 }
 .stat-item {
@@ -795,18 +795,22 @@ input:focus, textarea:focus, select:focus { border-color: var(--green-main); box
   border-radius: var(--radius-lg);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  overflow: hidden;
+  /* NO usar overflow:hidden aquí: combinado con backface-visibility, Chrome
+     promueve la cara a una capa que ignora el backface y deja el "fantasma"
+     de la imagen al voltear. El recorte de esquinas se hace en los hijos. */
 }
 .product-front {
   background: var(--bg-white);
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
+  transform: rotateY(0deg); /* contexto 3D propio explícito: refuerza el backface */
 }
 .product-front-img {
   height: 180px;
   overflow: hidden;
   position: relative;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 .product-front-img img {
   width: 100%;

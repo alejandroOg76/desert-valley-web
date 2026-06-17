@@ -821,6 +821,14 @@ input:focus, textarea:focus, select:focus { border-color: var(--green-main); box
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
+/* Cara frontal con foto real de envase: fondo claro y bote completo sin recorte */
+.product-front-img--envase {
+  background: linear-gradient(160deg, #f5f8f3, #e8efe4);
+}
+.product-front-img--envase img {
+  object-fit: contain;
+  padding: 14px;
+}
 .product-category-badge {
   position: absolute;
   top: 12px;

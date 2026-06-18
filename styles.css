@@ -823,7 +823,7 @@ input:focus, textarea:focus, select:focus { border-color: var(--green-main); box
 }
 /* Cara frontal con foto real de envase: rellena el recuadro (mismo tamaño que el resto, sin bordes blancos) */
 .product-front-img--envase {
-  background: linear-gradient(160deg, #f5f8f3, #e8efe4);
+  background: #f4f7f2;
 }
 .product-front-img--envase img {
   object-fit: cover;
